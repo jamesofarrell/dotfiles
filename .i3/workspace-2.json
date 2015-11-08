@@ -1,0 +1,25 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 881,
+       "width": 1440,
+       "x": 0,
+       "y": 0
+    },
+    "name": "dotfiles/config at master · lithp/dotfiles · GitHub - Chromium",
+    "percent": 1,
+    "swallows": [
+       {
+        "class": "^Chromium\\-browser$",
+        "instance": "^Chromium\\-browser$",
+       // "title": "^dotfiles\\/config\\ at\\ master\\ ·\\ lithp\\/dotfiles\\ ·\\ GitHub\\ \\-\\ Chromium$",
+        "transient_for": "^$",
+        "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
