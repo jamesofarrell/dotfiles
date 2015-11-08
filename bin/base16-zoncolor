@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -rf /home/jameso/.themes/zoncolorBase16Builder
+pushd ~/src/zoncolor-themes/ > /dev/null
+./zoncolor/zoncolor.sh -e -t -f ./themes/zoncolorBase16.zcfg
+popd > /dev/null

@@ -40,6 +40,7 @@ update gnome-colors base16-$1.gnome.dark.sh
 update gtkrc-2.0 base16-$1.dark.gtkrc-2.0
 update dunst base16-$1.dunstrc
 update zoncolor base16-$1.zoncolorBase16Builder.zcfg
+update rofi base16-$1.rofi
 
 #restart programs
 wallpaperbuilder && feh --no-fehbg --bg-fill ~/.wallpaperbuilder/wallpaper.png
