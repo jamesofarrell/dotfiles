@@ -19,7 +19,7 @@ THEME_PATH=$BASE16_PATH/schemes/$1.yml
 
 if [ ! -e $THEME_PATH ];
 then
-	echo $THEME_PATH does not exist
+	notify-send -u critical "$THEME_PATH does not exist"
 	exit
 fi
 echo $1

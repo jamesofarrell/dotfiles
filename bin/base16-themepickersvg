@@ -1,6 +1,11 @@
 #!/bin/sh
 SELECTION=`pqiv -c -d 0 -i -z 1 -1 'basename $1 | sed "s/base16\-//g" | sed "s/\.svg//g"; killall "pqiv"' --disable-scaling -T '$BASEFILENAME $IMAGE_NUMBER/$IMAGE_COUNT' ~/src/base16-builder/output/picker/*.svg`
-if [ ! -z $SELECTION ];
+
+echo $SELECTION
+
+SELECT=`echo -n $SELECTION | sed "s/atelier/atelier\-/g" |  sed "s/yesterday(?!$)/yesterday\-/g"`
+
+if [ ! -z $SELECT ];
 then
-	base16-themechange $SELECTION
+	base16-themechange $SELECT
 fi
