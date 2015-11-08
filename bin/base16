@@ -1,0 +1,5 @@
+#!/bin/bash
+echo  ./base16 $@;
+pushd ~/src/base16-builder/ > /dev/null
+./base16 $@
+popd > /dev/null

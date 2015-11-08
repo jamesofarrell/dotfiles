@@ -1,0 +1,55 @@
+#!/bin/bash
+
+BASE16_PATH=/home/jameso/src/base16-builder
+
+update () {
+	ITEM_CONFIG=$BASE16_PATH/output/$1/$2
+	if [ -f $ITEM_CONFIG ]
+	then
+		rm $BASE16_PATH/active/$1
+        	ln -s $ITEM_CONFIG $BASE16_PATH/active/$1
+		echo OK $1 $2
+	else
+		echo FAIL $1 $2
+	fi
+
+}
+
+THEME_PATH=$BASE16_PATH/schemes/$1.yml
+
+if [ ! -e $THEME_PATH ];
+then
+	echo $THEME_PATH does not exist
+	exit
+fi
+echo $1
+
+pushd $BASE16_PATH > /dev/null
+./base16 -s $THEME_PATH
+popd > /dev/null
+
+#update config
+update i3 base16-$1.i3
+update i3status base16-$1.i3status
+update rxvt-unicode base16-$1-dark
+update xresources base16-$1.dark.256.xresources
+update wallpaperbuilder base16-$1.wallpaperbuilder
+update stylish base16-$1.stylish.dark
+update newtab base16-$1.newtab.dark.css
+update gnome-colors base16-$1.gnome.dark.sh
+update gtkrc-2.0 base16-$1.dark.gtkrc-2.0
+update dunst base16-$1.dunstrc
+update zoncolor base16-$1.zoncolorBase16Builder.zcfg
+
+#restart programs
+wallpaperbuilder && feh --no-fehbg --bg-fill ~/.wallpaperbuilder/wallpaper.png
+rm -rf /home/jameso/.themes/zoncolorBase16Builder
+~/src/zoncolor-themes/zoncolor/zoncolor.sh -e -t -f ~/src/zoncolor-themes/themes/zoncolorBase16.zcfg
+~/bin/gnome-colors
+xrdb ~/.Xresources
+i3-msg "restart"
+killall rofi
+killall dunst
+sleep 1
+i3-msg "exec --no-startup-id rofi"
+

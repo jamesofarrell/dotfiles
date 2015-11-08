@@ -1,0 +1,2 @@
+#!/bin/sh
+i3-msg "exec /usr/bin/rdesktop -r clipboard:PRIMARYCLIPBOARD -K -g 1440x860 -x b $@"

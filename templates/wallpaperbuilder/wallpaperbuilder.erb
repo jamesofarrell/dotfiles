@@ -1,0 +1,2 @@
+#!/bin/sh
+convert \( -size 2880x1800 canvas:\#<%= @base["00"]["hex"] %> \) \( ~/.wallpaperbuilder/moon.png -fuzz 50% -fill \#<%= @base["0C"]["hex"] %> -opaque white \) -geometry +0+0 -composite \( ~/.wallpaperbuilder/spot.png -fuzz 50% -fill \#<%= @base["0D"]["hex"] %> -opaque white  \) -geometry +0+0 -composite ~/.wallpaperbuilder/wallpaper.png

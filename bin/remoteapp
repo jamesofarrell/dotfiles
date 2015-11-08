@@ -1,0 +1,2 @@
+#!/bin/sh
+rdesktop -g 1440x860 -r clipboard:PRIMARYCLIPBOARD -K -x -b -5 -z -s "||$1" -d intranet.iseek.com.au -u jofarrell -p - iseekrds.intranet.iseek.com.au 

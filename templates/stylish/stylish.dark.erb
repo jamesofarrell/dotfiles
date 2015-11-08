@@ -1,0 +1,309 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/* <%= @base["00"]["hex"] %> */
+/*tab-width*/
+
+.tabbrowser-tabs:not([drag=detach]) > .tabbrowser-tab:not([pinned])[fadein] {
+min-width: 10px !important;
+max-width: 100% !important;
+}
+/*comment above to have normal tab width*/
+
+
+/*remove shitty fog*/
+#TabsToolbar:not(:-moz-lwtheme)::after {display: none;}
+/* Remove the following line if you want the text color of unselected tabs to be black (Firefox default) */
+#TabsToolbar .tabbrowser-tab:not([selected]) {
+ color: #<%= @base["04"]["hex"] %>;
+ background: #<%= @base["01"]["hex"] %>;
+}
+
+/*remove internal border*/
+#main-window:not([chromehidden*="toolbar"])[sizemode="normal"]
+{
+ margin-top:-1px!important;
+ margin-left:-1px!important;
+ margin-right:-1px!important;
+ margin-bottom:-1px !important;
+ border-color: #<%= @base["01"]["hex"] %> !important;
+ }
+
+
+
+#TabsToolbar {
+    background: #<%= @base["01"]["hex"] %> !important;
+ margin-top:-1px!important;
+ margin-left:-1px!important;
+ margin-right:-1px!important;
+ margin-bottom:-1px !important;
+    border-color: #<%= @base["01"]["hex"] %> !important;
+}
+
+
+#TabsToolbar .tabbrowser-tabs {
+    min-height: 21px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    text-align: center !important;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+
+#tabbrowser-tabs tab .tab-close-button {
+    /*display: none !important;*/
+}
+
+.tabbrowser-tab:not([pinned]) .tab-icon-image {
+    display: none !important;
+    /*filter: grayscale(100%) contrast(1.5);*/
+
+}
+
+.tabbrowser-tab[pinned][titlechanged]:not([selected="true"]) {
+    /* background-image: url('file:///home/jameso/.stylish/notification.png') !important; */ 
+    background-image: none !important;
+}
+
+#TabsToolbar .tabbrowser-tab {
+    -moz-border-top-colors: none !important;
+    -moz-border-left-colors: none !important;
+    -moz-border-right-colors: none !important;
+    -moz-border-bottom-colors: none !important;
+    text-shadow: 0 0 4px rgba(80,80,80,0) !important;
+    padding: 0px 0px !important;
+    border-radius: 0px !important;
+    background: <%= @base["07"]["hex"] %> !important;
+    background-clip: padding-box !important;
+    transition: all .1s !important;
+    margin-left: 0px !important;
+    color: #<%= @base["04"]["hex"] %> !important;
+    /* font-family: 'Sansation' !important; */
+    font-family: 'Inconsolata' !important;
+    font-size: 10 !important;
+    text-align: left;
+    min-height: 14px !important;
+}
+
+#TabsToolbar .tabbrowser-tab.favicon {
+	display: none !important;
+}
+#TabsToolbar .tabs-newtab-button {
+    -moz-border-top-colors: none !important;
+    -moz-border-left-colors: none !important;
+    -moz-border-right-colors: none !important;
+    -moz-border-bottom-colors: none !important;
+    border-style: solid !important;
+    border-color: #<%= @base["01"]["hex"] %> !important;
+    border-width: 1px 1px 0 1px !important;
+    text-shadow: 0 0 4px rgba(80,80,80,0) !important;
+    background:  #<%= @base["01"]["hex"] %>!important;
+    list-style-image: url('file:///home/jameso/.stylish/newtab.png') !important;
+    background-clip: padding-box !important;
+    transition: all .1s !important;
+}
+
+
+#TabsToolbar .tabbrowser-tab[selected] {
+    background: none repeat scroll 0 0 padding-box #<%= @base["0D"]["hex"] %> !important; /* --AutoRice Selected tab background color */
+    
+    background-clip: padding-box !important;
+    
+    color: #<%= @base["00"]["hex"] %> !important;
+    text-shadow: 1px 0 1px rgba(80,80,80,0) !important;
+}
+
+#TabsToolbar .tabbrowser-tab[pinned]:not([selected]) {
+    background: none repeat scroll 0 0 padding-box #<%= @base["00"]["hex"] %> !important; /* --AutoRice Selected tab background color */
+    color: #<%= @base["04"]["hex"] %> !important;
+    text-shadow: 1px 0 1px rgba(80,80,80,0) !important;
+}
+#TabsToolbar .tabs-newtab-button:hover,
+#TabsToolbar .tabbrowser-tab:hover:not([selected]) {
+    background-color: #<%= @base["02"]["hex"] %> !important;
+    color: #<%= @base["06"]["hex"] %> !important;
+}
+
+#TabsToolbar .tab-background {
+    margin: 0 !important;
+    background: transparent !important;
+}
+
+#TabsToolbar .tab-background-start,
+#TabsToolbar .tab-background-end {
+    display: none !important;
+}
+
+#TabsToolbar .tab-background-middle {
+    margin: -4px -2px !important;
+    background: transparent !important;
+}
+
+#TabsToolbar .tabbrowser-tab:after,
+#TabsToolbar .tabbrowser-tab:before {
+    display: none !important;
+}
+
+#TabsToolbar .tabs-newtab-button {
+    border-width: 1px 1px 0 1px !important;
+    margin: 0 !important;
+    width: auto !important;
+    padding: 0 5px !important;
+}
+
+#addon-bar,
+#PersonalToolbar,
+#nav-bar {
+    background:  #<%= @base["01"]["hex"] %> !important;
+    box-shadow: none !important;
+    background-clip: padding-box !important;
+    border-color: #<%= @base["01"]["hex"] %> !important;
+    border-radius: 0 !important;
+}
+
+#TabsToolbar:not([collapsed="true"]) + #nav-bar {
+
+    border-top: none !important;
+
+}
+
+
+
+
+.subviewbutton.panel-subview-footer {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+
+/* URL BAR */
+
+/* remove back/fwd */
+
+#nav-bar  #back-button > .toolbarbutton-icon {
+ display: none !important;
+}
+ #forward-button {
+ display: none !important;
+}
+
+/*styling*/
+#searchbar > .searchbar-textbox,
+
+#urlbar {
+
+    border: 0px solid  #<%= @base["01"]["hex"] %> !important;
+    text-align: left;
+    background: #<%= @base["01"]["hex"] %> !important;
+    margin-top: 1px !important;
+    margin-left: 19px !important;
+    border-radius: 1px;
+    margin-bottom: 0px;
+    padding: 2px !important;
+    color: #<%= @base["06"]["hex"] %> !important;
+    font-family: 'Inconsolata' !important;
+    height: 22px !important;
+    /*font-size: 1.1em;*/
+}
+
+#nav-bar {
+    background-color:  #<%= @base["01"]["hex"] %> !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    margin-bottom: -1px !important;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+    height: 22px !important;
+}
+    
+
+
+#PanelUI-button {
+
+    background-position: 100% 0, calc(100% - 1px) 0, calc(100% - 2px) 0;
+    background: url('file:///home/jameso/.stylish/menu.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    box-shadow: none !important;
+    margin-top: 1px !important;
+    width: 10px !important;
+    /*display: none !important; /*COMMENT THIS LINE FOR A MENU BUTTON*/
+  }
+#PanelUI-button:hover {
+
+    background-position: 100% 0, calc(100% - 1px) 0, calc(100% - 2px) 0;
+    background: url('file:///home/jameso/.stylish/menu-hover.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    box-shadow: none !important;
+    width: 10px !important;
+  }
+
+#PanelUI-button .button-icon,
+#PanelUI-button .button-text {
+    display: none !important;
+}
+#PanelUI-menu-button {
+    opacity: 0 !important;
+    width: 10px !important;
+    margin-right: -15px !important;
+}
+
+#identity-box, #dropmarker-icon, #historydropmarker, #autocomplete-history-dropmarker, #urlbar-history-dropmarker, #dropmarker {
+    display: none !important;
+}
+
+#autocomplete-history-dropmarker, #urlbar-history-dropmarker, #urlbar-reload-button {
+    display: none !important;
+}
+
+.autocomplete-history-dropmarker.urlbar-history-dropmarker {
+    display: none !important;
+}
+
+#plugins-notification-icon, #notification-anchor-icon, #notification-popup-box {
+    display: none !important;
+    
+}
+
+/*download button*/
+#downloads-button {
+    background: url('file:///home/jameso/.stylish/downloads.png') !important;
+    background-repeat: no-repeat  !important;
+    background-position: center !important;
+    opacity: 1 !important;
+    margin-left: 10px !important;
+    margin-right: 0px !important;
+    margin-bottom: 0px !important;
+    box-shadow: none !important;
+    width: 10px !important;
+}
+
+#toolbarbutton-icon .Downloads,
+#downloads-indicator-icon,
+#downloads-indicator-progress-area,
+#downloads-button .button-text {
+    display: none !important;
+}
+
+#downloads-indicator-anchor {opacity: 0 !important;}
+
+#downloads-button:hover {
+    opacity: 1 !important;
+    box-shadow: none !important;
+    background: url('file:///home/jameso/.stylish/downloads-hover.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+/* remove tab scrolling */
+
+.scrollbutton-up, .scrollbutton-down, #alltabs-button {
+    display: none !important;
+}
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+menubar, menubutton, menulist, menu, menuitem {
+  color: #<%= @base["04"]["hex"] %> !important;
+  background-color:  #<%= @base["01"]["hex"] %> !important;
+}

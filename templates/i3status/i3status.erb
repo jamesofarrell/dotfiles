@@ -1,0 +1,72 @@
+# ~/.i3status.conf
+# Base16 <%= @scheme %>, by <%= @author %>
+# template by Matt Parnell, @parnmatt
+
+general {
+    colors = true
+    color_good = "#<%= @base["0B"]["hex"] %>"
+    color_bad = "#<%= @base["08"]["hex"] %>"
+    color_degraded = "#<%= @base["09"]["hex"] %>"
+    ## remember to add your prefered interval
+    interval = 2
+}
+
+order += "window_title_cust"
+order += "wireless wlan0"
+order += "volume master"
+order += "battery_bar"
+order += "cpu_temperature 0"
+order += "tztime local"
+
+wireless wlan0 {
+        format_up = " %quality"
+        format_down = " down"
+        on_click 1 = "exec urxvt -title 'F: Wifi' -g 80x20-10-35 -e wicd-curses"
+}
+
+battery 0 {
+        format = "%status %percentage %consumption"
+        format_down = "No battery"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 15
+	threshold_type = percent
+}
+
+
+battery_bar {
+  format = "Bat: {}"
+  color_bad = None
+  color_degraded = None
+  color_charging = None
+  color_good = None
+  mode = "bar"
+  on_click 1 = "exec urxvt -title 'F: Power' -g 100x20-10-35 -e sudo powertop"
+}
+
+uname {
+	format = "{node}"
+}
+
+tztime local {
+        format ="%Y-%m-%d %H:%M"
+	on_click 1 = "exec urxvt -title 'F: Cal' -g 55x13-10-35 -e bash ~/.i3/floaters/calendar"
+}
+
+cpu_temperature 0 {
+        format = "%degrees°"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input"
+	on_click 1 =  "exec urxvt -title 'F: Temp' -g 55x13-10-35 -e bash ~/.i3/floaters/acpi-battery-info"
+}
+
+volume master {
+        format = " %volume"
+        format_muted = " %volume"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+	on_click 1 = "exec urxvt -title 'F: Vol' -g 100x20-10-35 -e alsamixer"
+}
+
+disk "/" {
+        format = "%free"
+}

@@ -1,0 +1,22 @@
+#!/bin/sh
+case "$@" in
+        start)
+            /usr/bin/VBoxManage startvm --type headless eros
+            ;;
+        pause)
+            /usr/bin/VBoxManage controlvm eros pause
+            ;;
+	resume)
+            /usr/bin/VBoxManage controlvm eros resume
+	    ;;
+        stop)
+            /usr/bin/VBoxManage controlvm eros poweroff
+            ;;
+	state)
+	   /usr/bin/VBoxManage showvminfo eros | grep "State:"
+	    ;;
+	*)
+	    echo eros [start] [stop] [pause] [resume] [state]
+	    ;;
+esac
+

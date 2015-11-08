@@ -1,0 +1,6 @@
+#!/bin/sh
+SELECTION=`ls ~/src/base16-builder/output/wallpaperbuilder | cut -d - -f 2 | cut -d . -f 1 | rofi -dmenu`
+if [ ! -z $SELECTION ];
+then
+	 base16-themechange $SELECTION
+fi

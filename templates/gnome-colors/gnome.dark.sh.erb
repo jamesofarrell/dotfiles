@@ -1,0 +1,4 @@
+#!/bin/sh
+gsettings set org.gnome.desktop.interface gtk-color-scheme "bg_color:#<%= @base["0D"]["hex"] %>;fg_color:#<%= @base["06"]["hex"] %>;base_color:#<%= @base["0D"]["hex"] %>;text_color:#<%= @base["07"]["hex"] %>;selected_bg_color:#<%= @base["01"]["hex"] %>;selected_fg_color:#<%= @base["07"]["hex"] %>;tooltip_bg_color:#<%= @base["02"]["hex"] %>;tooltip_fg_color:#<%= @base["07"]["hex"] %>;link_color:#<%= @base["0D"]["hex"] %>;"
+gconftool-2 --type=string --set /desktop/gnome/interface/gtk_color_scheme "bg_color:#<%= @base["0D"]["hex"] %>;fg_color:#<%= @base["06"]["hex"] %>;base_color:#<%= @base["0D"]["hex"] %>;text_color:#<%= @base["07"]["hex"] %>;selected_bg_color:#<%= @base["01"]["hex"] %>;selected_fg_color:#<%= @base["07"]["hex"] %>;tooltip_bg_color:#<%= @base["02"]["hex"] %>;tooltip_fg_color:#<%= @base["07"]["hex"] %>;link_color:#<%= @base["0D"]["hex"] %>;"
+# gsettings set org.gnome.desktop.interface gtk-color-scheme ""

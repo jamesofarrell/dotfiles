@@ -1,0 +1,2 @@
+#!/bin/sh
+i3lock -i ~/.i3/desktop.png --insidevercolor=00000099 --insidecolor=00000030 --insidewrongcolor=00000030 --ringvercolor=280D34FF --ringcolor=3C1C4BFF --ringwrongcolor=684777FF

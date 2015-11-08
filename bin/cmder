@@ -1,0 +1,2 @@
+#!/bin/sh
+i3-msg "exec --no-start-id /usr/bin/rdesktop -g 720x860 -r clipboard:PRIMARYCLIPBOARD -K -x -b -5 -z -s '||Cmder' -u jameso -p mollyPluto eros.home"

@@ -1,0 +1,16 @@
+#!/bin/sh
+output=`echo "logout\nsuspend\nrestart\nshutdown\n" | rofi -dmenu`
+
+case "$output" in
+        logout)
+            i3-msg exit
+            ;;
+        suspend)
+            sudo pm-suspend
+            ;;
+	restart)
+            sudo reboot 0
+	    ;;
+	shutdown)
+	    sudo poweroff -i
+esac
